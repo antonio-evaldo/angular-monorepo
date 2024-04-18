@@ -1,0 +1,78 @@
+{
+  "name": "alfabit-monorepo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/alfabit-monorepo/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/alfabit-monorepo",
+        "index": "apps/alfabit-monorepo/src/index.html",
+        "browser": "apps/alfabit-monorepo/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/alfabit-monorepo/tsconfig.app.json",
+        "assets": [
+          "apps/alfabit-monorepo/src/favicon.ico",
+          "apps/alfabit-monorepo/src/assets"
+        ],
+        "styles": ["apps/alfabit-monorepo/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "alfabit-monorepo:build:production"
+        },
+        "development": {
+          "buildTarget": "alfabit-monorepo:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "alfabit-monorepo:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/alfabit-monorepo/jest.config.ts"
+      }
+    }
+  }
+}
