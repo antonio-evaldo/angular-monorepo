@@ -22,7 +22,8 @@
         "port": 4400,
         "configDir": "libs/botao/.storybook",
         "browserTarget": "botao:build-storybook",
-        "compodoc": false
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "libs/botao"]
       },
       "configurations": {
         "ci": {
@@ -37,7 +38,8 @@
         "outputDir": "dist/storybook/botao",
         "configDir": "libs/botao/.storybook",
         "browserTarget": "botao:build-storybook",
-        "compodoc": false,
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "libs/botao"],
         "styles": ["libs/utils/styles/globals.css"],
         "stylePreprocessorOptions": {
           "includePaths": ["libs/utils/styles"]
