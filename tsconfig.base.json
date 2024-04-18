@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@angular-monorepo/botao": ["libs/botao/src/index.ts"],
+      "@angular-monorepo/input": ["libs/input/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
