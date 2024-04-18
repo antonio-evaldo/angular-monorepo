@@ -37,7 +37,11 @@
         "outputDir": "dist/storybook/botao",
         "configDir": "libs/botao/.storybook",
         "browserTarget": "botao:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "styles": ["libs/utils/styles/globals.css"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/utils/styles"]
+        }
       },
       "configurations": {
         "ci": {

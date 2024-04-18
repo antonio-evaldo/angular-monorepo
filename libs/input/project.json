@@ -37,7 +37,11 @@
         "outputDir": "dist/storybook/input",
         "configDir": "libs/input/.storybook",
         "browserTarget": "input:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "styles": ["libs/utils/styles/globals.css"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/utils/styles"]
+        }
       },
       "configurations": {
         "ci": {
