@@ -16,7 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@angular-monorepo/botao": ["libs/botao/src/index.ts"],
-      "@angular-monorepo/input": ["libs/input/src/index.ts"]
+      "@angular-monorepo/input": ["libs/input/src/index.ts"],
+      "@angular-monorepo/storybook-host": ["libs/storybook-host/src/index.ts"],
+      "@angular-monorepo/storybook-host-botao": [
+        "libs/storybook-host-botao/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

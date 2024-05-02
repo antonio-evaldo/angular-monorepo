@@ -15,54 +15,6 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint"
-    },
-    "storybook": {
-      "executor": "@storybook/angular:start-storybook",
-      "options": {
-        "port": 4400,
-        "configDir": "libs/botao/.storybook",
-        "browserTarget": "botao:build-storybook",
-        "compodoc": true,
-        "compodocArgs": ["-e", "json", "-d", "libs/botao"]
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "build-storybook": {
-      "executor": "@storybook/angular:build-storybook",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/botao",
-        "configDir": "libs/botao/.storybook",
-        "browserTarget": "botao:build-storybook",
-        "compodoc": true,
-        "compodocArgs": ["-e", "json", "-d", "libs/botao"],
-        "styles": ["libs/utils/styles/globals.css"],
-        "stylePreprocessorOptions": {
-          "includePaths": ["libs/utils/styles"]
-        }
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "static-storybook": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "botao:build-storybook",
-        "staticFilePath": "dist/storybook/botao",
-        "spa": true
-      },
-      "configurations": {
-        "ci": {
-          "buildTarget": "botao:build-storybook:ci"
-        }
-      }
     }
   }
 }
