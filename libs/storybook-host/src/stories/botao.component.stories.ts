@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { BotaoComponent } from './botao.component';
+import { BotaoComponent } from '../../../botao/src/lib/botao/botao.component';
 
 const meta: Meta<BotaoComponent> = {
   title: 'botao',
