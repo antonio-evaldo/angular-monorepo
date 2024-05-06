@@ -149,6 +149,49 @@
             "templateData": "<button\r\n    [class]=\"obterVariante(variante, desabilitado, tema)\"\r\n    [disabled]=\"desabilitado\"\r\n>\r\n    {{ texto }}\r\n</button>\r\n\r\n\r\n"
         },
         {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-52dfa2728922932c4c26834aaf364e55ef1220c2e75b3d2b88c05e3780fd48306217cd12d74b89c852d4b4cd2547202b21ac476b5fe34dbfd5781184063b7dbd",
+            "file": "libs/button/src/lib/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'lib-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.css',\n})\nexport class ButtonComponent {}\n",
+            "styleUrl": "./button.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>button works!</p>\n"
+        },
+        {
             "name": "InputComponent",
             "id": "component-InputComponent-d9f047eca17735837c5147c06bef89266756de0b7009104aa672e955eb40b0da32304bc9b4844339d9d2a8481faace6662a229e02ac8621804eb8441ccdb4bd9",
             "file": "libs/input/src/lib/input/input.component.ts",
@@ -229,6 +272,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  component: ButtonComponent,\n  title: 'ButtonComponent',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/input.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -274,6 +327,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    desabilitado: true\r\n  }\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n}"
             },
             {
                 "name": "Primary",
@@ -374,6 +437,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<BotaoComponent>",
                 "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -559,6 +633,28 @@
                     "defaultValue": "{\r\n  args: {\r\n    ...TerciarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
                 }
             ],
+            "libs/storybook-host/src/stories/button.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\n  component: ButtonComponent,\n  title: 'ButtonComponent',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n}"
+                }
+            ],
             "libs/storybook-host/src/stories/input.component.stories.ts": [
                 {
                     "name": "meta",
@@ -592,6 +688,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<BotaoComponent>",
                     "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "libs/storybook-host/src/stories/button.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -649,6 +758,15 @@
                 "name": "BotaoComponent",
                 "coveragePercent": 16,
                 "coverageCount": "1/6",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/button/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -796,6 +914,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "TerciarioVioletaDesabilitado",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
