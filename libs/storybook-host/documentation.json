@@ -150,7 +150,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-52dfa2728922932c4c26834aaf364e55ef1220c2e75b3d2b88c05e3780fd48306217cd12d74b89c852d4b4cd2547202b21ac476b5fe34dbfd5781184063b7dbd",
+            "id": "component-ButtonComponent-373a99ef07452b847bb7e387ae1dfb4b043eb3a1a45504e1c822234bd1506b94782605e541dd6247e1ec955369c4b77c39c9ab4697f3b775a96bb663876353eb",
             "file": "libs/button/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -165,10 +165,108 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "desabilitado",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tema",
+                    "defaultValue": "'azul'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "temas",
+                    "decorators": []
+                },
+                {
+                    "name": "texto",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nTexto botão\n",
+                    "description": "<p>Texto botão</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "variante",
+                    "defaultValue": "'primario'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "variantes",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "obterVariante",
+                    "args": [
+                        {
+                            "name": "variante",
+                            "type": "variantes",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "desabilitado",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "tema",
+                            "type": "temas",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "variante",
+                            "type": "variantes",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "desabilitado",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "tema",
+                            "type": "temas",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -183,13 +281,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'lib-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.css',\n})\nexport class ButtonComponent {}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\ntype variantes = 'primario' | 'secundario' | 'terciario';\ntype temas = 'azul' | 'violeta';\n\n@Component({\n  selector: 'lib-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.css',\n})\nexport class ButtonComponent {\n\n  /**\n   * Texto botão\n   */\n  @Input() texto = '';\n  @Input() desabilitado = false;\n  @Input() variante: variantes = 'primario';\n  @Input() tema: temas = 'azul';\n\n  obterVariante(variante: variantes, desabilitado: boolean, tema: temas): string {\n    let classes = `${variante} ${tema}`;\n\n    classes += desabilitado ? \" disabled\" : \"\";\n\n    return classes;\n  }\n}\n",
             "styleUrl": "./button.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>button works!</p>\n"
+            "templateData": "<button\n    [class]=\"obterVariante(variante, desabilitado, tema)\"\n    [disabled]=\"desabilitado\"\n>\n    {{ texto }}\n</button>\n\n\n\n"
         },
         {
             "name": "InputComponent",
@@ -276,7 +374,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  component: ButtonComponent,\n  title: 'ButtonComponent',\n}"
+                "defaultValue": "{\n  component: ButtonComponent,\n  title: 'Button',\n  parameters: {\n    docs: {\n      description: {\n        component: 'Este é um componente de botão utilizado para disparar ações.'\n      }\n    },\n  }\n}"
             },
             {
                 "name": "meta",
@@ -299,6 +397,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    texto: 'Action',\r\n    desabilitado: false,\r\n    variante: 'primario',\r\n    tema: 'azul'\r\n  }\r\n}"
             },
             {
+                "name": "Primario",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    texto: 'Action',\n    desabilitado: false,\n    variante: 'primario',\n    tema: 'azul'\n  }\n}"
+            },
+            {
                 "name": "PrimarioDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -307,6 +415,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
+            },
+            {
+                "name": "PrimarioDesabilitado",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Primario.args,\n    desabilitado: true,\n  }\n}"
             },
             {
                 "name": "PrimarioVioleta",
@@ -319,6 +437,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    tema: 'violeta'\r\n  }\r\n}"
             },
             {
+                "name": "PrimarioVioleta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Primario.args,\n    tema: 'violeta'\n  }\n}"
+            },
+            {
                 "name": "PrimarioVioletaDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -329,14 +457,14 @@
                 "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    desabilitado: true\r\n  }\r\n}"
             },
             {
-                "name": "Primary",
+                "name": "PrimarioVioletaDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {},\n}"
+                "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    desabilitado: true\n  }\n}"
             },
             {
                 "name": "Primary",
@@ -359,6 +487,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
             },
             {
+                "name": "Secundario",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Primario.args,\n    variante: 'secundario',\n  }\n}"
+            },
+            {
                 "name": "SecundarioDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -367,6 +505,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...Secundario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
+            },
+            {
+                "name": "SecundarioDesabilitado",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Secundario.args,\n    desabilitado: true,\n  }\n}"
             },
             {
                 "name": "SecundarioVioleta",
@@ -379,6 +527,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
             },
             {
+                "name": "SecundarioVioleta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    variante: 'secundario',\n  }\n}"
+            },
+            {
                 "name": "SecundarioVioletaDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -387,6 +545,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...SecundarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
+            },
+            {
+                "name": "SecundarioVioletaDesabilitado",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...SecundarioVioleta.args,\n    desabilitado: true,\n  }\n}"
             },
             {
                 "name": "Terciario",
@@ -399,6 +567,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
             },
             {
+                "name": "Terciario",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Primario.args,\n    variante: 'terciario',\n  }\n}"
+            },
+            {
                 "name": "TerciarioDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -407,6 +585,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...Terciario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
+            },
+            {
+                "name": "TerciarioDesabilitado",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Terciario.args,\n    desabilitado: true,\n  }\n}"
             },
             {
                 "name": "TerciarioVioleta",
@@ -419,6 +607,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
             },
             {
+                "name": "TerciarioVioleta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    variante: 'terciario',\n  }\n}"
+            },
+            {
                 "name": "TerciarioVioletaDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -427,6 +625,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...TerciarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
+            },
+            {
+                "name": "TerciarioVioletaDesabilitado",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...TerciarioVioleta.args,\n    desabilitado: true,\n  }\n}"
             }
         ],
         "functions": [],
@@ -476,11 +684,33 @@
                 "kind": 192
             },
             {
+                "name": "temas",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"azul\" | \"violeta\"",
+                "file": "libs/button/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
                 "name": "variantes",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
                 "file": "libs/botao/src/lib/botao/botao.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "variantes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
+                "file": "libs/button/src/lib/button/button.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -642,17 +872,127 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  component: ButtonComponent,\n  title: 'ButtonComponent',\n}"
+                    "defaultValue": "{\n  component: ButtonComponent,\n  title: 'Button',\n  parameters: {\n    docs: {\n      description: {\n        component: 'Este é um componente de botão utilizado para disparar ações.'\n      }\n    },\n  }\n}"
                 },
                 {
-                    "name": "Primary",
+                    "name": "Primario",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {},\n}"
+                    "defaultValue": "{\n  args: {\n    texto: 'Action',\n    desabilitado: false,\n    variante: 'primario',\n    tema: 'azul'\n  }\n}"
+                },
+                {
+                    "name": "PrimarioDesabilitado",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Primario.args,\n    desabilitado: true,\n  }\n}"
+                },
+                {
+                    "name": "PrimarioVioleta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Primario.args,\n    tema: 'violeta'\n  }\n}"
+                },
+                {
+                    "name": "PrimarioVioletaDesabilitado",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    desabilitado: true\n  }\n}"
+                },
+                {
+                    "name": "Secundario",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Primario.args,\n    variante: 'secundario',\n  }\n}"
+                },
+                {
+                    "name": "SecundarioDesabilitado",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Secundario.args,\n    desabilitado: true,\n  }\n}"
+                },
+                {
+                    "name": "SecundarioVioleta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    variante: 'secundario',\n  }\n}"
+                },
+                {
+                    "name": "SecundarioVioletaDesabilitado",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...SecundarioVioleta.args,\n    desabilitado: true,\n  }\n}"
+                },
+                {
+                    "name": "Terciario",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Primario.args,\n    variante: 'terciario',\n  }\n}"
+                },
+                {
+                    "name": "TerciarioDesabilitado",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Terciario.args,\n    desabilitado: true,\n  }\n}"
+                },
+                {
+                    "name": "TerciarioVioleta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    variante: 'terciario',\n  }\n}"
+                },
+                {
+                    "name": "TerciarioVioletaDesabilitado",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/storybook-host/src/stories/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...TerciarioVioleta.args,\n    desabilitado: true,\n  }\n}"
                 }
             ],
             "libs/storybook-host/src/stories/input.component.stories.ts": [
@@ -743,12 +1083,36 @@
                     "description": "",
                     "kind": 192
                 }
+            ],
+            "libs/button/src/lib/button/button.component.ts": [
+                {
+                    "name": "temas",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"azul\" | \"violeta\"",
+                    "file": "libs/button/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                },
+                {
+                    "name": "variantes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
+                    "file": "libs/button/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
             ]
         }
     },
     "routes": [],
     "coverage": {
-        "count": 0,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -765,8 +1129,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coveragePercent": 16,
+                "coverageCount": "1/6",
                 "status": "low"
             },
             {
@@ -933,7 +1297,117 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Primario",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimarioDesabilitado",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimarioVioleta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimarioVioletaDesabilitado",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secundario",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SecundarioDesabilitado",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SecundarioVioleta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SecundarioVioletaDesabilitado",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Terciario",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TerciarioDesabilitado",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TerciarioVioleta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TerciarioVioletaDesabilitado",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
