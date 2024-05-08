@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "BotaoComponent",
-            "id": "component-BotaoComponent-7f4209577df86088b21d4f9e1bdf0644fd997aa68a528c5b51ae7ba804736fa2864946e34e17625b80cc963682d418e6f8d46f4aaf3eb5928fd7a4ed4cb4a446",
+            "id": "component-BotaoComponent-69610ec791d02be6adf5ff9c08a592387966c8c890c23474b83768cc71674b39ef69ca4116fb3e9fdef9de85f0853bdaf8b2ef6a876a53f2694644b818762764",
             "file": "libs/botao/src/lib/botao/botao.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -140,7 +140,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\ntype variantes = 'primario' | 'secundario' | 'terciario';\r\ntype temas = 'azul' | 'violeta';\r\n\r\n@Component({\r\n  selector: 'lib-botao',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './botao.component.html',\r\n  styleUrl: './botao.component.css',\r\n})\r\nexport class BotaoComponent {\r\n  /**\r\n   * Texto botão\r\n   */\r\n  @Input() texto = '';\r\n  @Input() desabilitado = false;\r\n  @Input() variante: variantes = 'primario';\r\n  @Input() tema: temas = 'azul';\r\n\r\n  obterVariante(variante: variantes, desabilitado: boolean, tema: temas): string {\r\n    let classes = `${variante} ${tema}`;\r\n\r\n    classes += desabilitado ? \" disabled\" : \"\";\r\n\r\n    return classes;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\ntype variantes = 'primario' | 'secundario' | 'terciario';\ntype temas = 'azul' | 'violeta';\n\n@Component({\n  selector: 'lib-botao',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './botao.component.html',\n  styleUrl: './botao.component.css',\n})\nexport class BotaoComponent {\n  /**\n   * Texto botão\n   */\n  @Input() texto = '';\n  @Input() desabilitado = false;\n  @Input() variante: variantes = 'primario';\n  @Input() tema: temas = 'azul';\n\n  obterVariante(variante: variantes, desabilitado: boolean, tema: temas): string {\n    let classes = `${variante} ${tema}`;\n\n    classes += desabilitado ? \" disabled\" : \"\";\n\n    return classes;\n  }\n}\n",
             "styleUrl": "./botao.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -150,7 +150,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-373a99ef07452b847bb7e387ae1dfb4b043eb3a1a45504e1c822234bd1506b94782605e541dd6247e1ec955369c4b77c39c9ab4697f3b775a96bb663876353eb",
+            "id": "component-ButtonComponent-337ea826dedfb909c6a3e399d93e4e86efa84809bc637be5d51cd03477403ca5b79197982a0c623dc8c730700ce55780a273735e66d3becf52ab545eff8fce9f",
             "file": "libs/button/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -281,17 +281,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\ntype variantes = 'primario' | 'secundario' | 'terciario';\ntype temas = 'azul' | 'violeta';\n\n@Component({\n  selector: 'lib-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.css',\n})\nexport class ButtonComponent {\n\n  /**\n   * Texto botão\n   */\n  @Input() texto = '';\n  @Input() desabilitado = false;\n  @Input() variante: variantes = 'primario';\n  @Input() tema: temas = 'azul';\n\n  obterVariante(variante: variantes, desabilitado: boolean, tema: temas): string {\n    let classes = `${variante} ${tema}`;\n\n    classes += desabilitado ? \" disabled\" : \"\";\n\n    return classes;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\ntype variantes = 'primario' | 'secundario' | 'terciario';\r\ntype temas = 'azul' | 'violeta';\r\n\r\n@Component({\r\n  selector: 'lib-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.css',\r\n})\r\nexport class ButtonComponent {\r\n\r\n  /**\r\n   * Texto botão\r\n   */\r\n  @Input() texto = '';\r\n  @Input() desabilitado = false;\r\n  @Input() variante: variantes = 'primario';\r\n  @Input() tema: temas = 'azul';\r\n\r\n  obterVariante(variante: variantes, desabilitado: boolean, tema: temas): string {\r\n    let classes = `${variante} ${tema}`;\r\n\r\n    classes += desabilitado ? \" disabled\" : \"\";\r\n\r\n    return classes;\r\n  }\r\n}\r\n",
             "styleUrl": "./button.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<button\n    [class]=\"obterVariante(variante, desabilitado, tema)\"\n    [disabled]=\"desabilitado\"\n>\n    {{ texto }}\n</button>\n\n\n\n"
+            "templateData": "<button\r\n    [class]=\"obterVariante(variante, desabilitado, tema)\"\r\n    [disabled]=\"desabilitado\"\r\n>\r\n    {{ texto }}\r\n</button>\r\n\r\n\r\n\r\n"
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-d9f047eca17735837c5147c06bef89266756de0b7009104aa672e955eb40b0da32304bc9b4844339d9d2a8481faace6662a229e02ac8621804eb8441ccdb4bd9",
+            "id": "component-InputComponent-1c965e542e6f9ed87766810ae35a369db33227b1422cad8b7908d9c2b28a3c7de1dc8b5d64eaa9c827e80cdf6dbfa169030e41f615f4a58a3c94bb7939562a9c",
             "file": "libs/input/src/lib/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -334,13 +334,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'lib-text',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './input.component.html',\r\n  styleUrl: './input.component.css',\r\n})\r\nexport class InputComponent {\r\n  @Input() multilinha = false;\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'lib-text',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './input.component.html',\n  styleUrl: './input.component.css',\n})\nexport class InputComponent {\n  @Input() multilinha = false;\n}\n",
             "styleUrl": "./input.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@if (!multilinha) {\r\n  <input type=\"text\">\r\n} @else {\r\n  <textarea></textarea>\r\n}\r\n"
+            "templateData": "@if (!multilinha) {\n  <input type=\"text\">\n} @else {\n  <textarea></textarea>\n}\n"
         }
     ],
     "modules": [],
@@ -354,7 +354,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StorybookConfig",
-                "defaultValue": "{\n  stories: ['../src/stories/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Documentação',\n  }\n}"
+                "defaultValue": "{\r\n  stories: ['../src/stories/*.stories.@(js|jsx|ts|tsx|mdx)'],\r\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {},\r\n  },\r\n  docs: {\r\n    autodocs: true,\r\n    defaultName: 'Documentação',\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -374,7 +374,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  component: ButtonComponent,\n  title: 'Button',\n  parameters: {\n    docs: {\n      description: {\n        component: 'Este é um componente de botão utilizado para disparar ações.'\n      }\n    },\n  }\n}"
+                "defaultValue": "{\r\n  component: ButtonComponent,\r\n  title: 'Button',\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Este é um componente de botão utilizado para disparar ações.'\r\n      }\r\n    },\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -384,7 +384,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<InputComponent>",
-                "defaultValue": "{\n  component: InputComponent,\n  title: 'InputComponent',\n}"
+                "defaultValue": "{\r\n  component: InputComponent,\r\n  title: 'InputComponent',\r\n}"
             },
             {
                 "name": "Primario",
@@ -404,7 +404,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    texto: 'Action',\n    desabilitado: false,\n    variante: 'primario',\n    tema: 'azul'\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    texto: 'Action',\r\n    desabilitado: false,\r\n    variante: 'primario',\r\n    tema: 'azul'\r\n  }\r\n}"
             },
             {
                 "name": "PrimarioDesabilitado",
@@ -424,7 +424,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...Primario.args,\n    desabilitado: true,\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
             },
             {
                 "name": "PrimarioVioleta",
@@ -444,7 +444,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...Primario.args,\n    tema: 'violeta'\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    tema: 'violeta'\r\n  }\r\n}"
             },
             {
                 "name": "PrimarioVioletaDesabilitado",
@@ -464,7 +464,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    desabilitado: true\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    desabilitado: true\r\n  }\r\n}"
             },
             {
                 "name": "Primary",
@@ -474,7 +474,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    multilinha: false,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    multilinha: false,\r\n  },\r\n}"
             },
             {
                 "name": "Secundario",
@@ -494,7 +494,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...Primario.args,\n    variante: 'secundario',\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
             },
             {
                 "name": "SecundarioDesabilitado",
@@ -514,7 +514,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...Secundario.args,\n    desabilitado: true,\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Secundario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
             },
             {
                 "name": "SecundarioVioleta",
@@ -534,7 +534,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    variante: 'secundario',\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
             },
             {
                 "name": "SecundarioVioletaDesabilitado",
@@ -554,7 +554,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...SecundarioVioleta.args,\n    desabilitado: true,\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...SecundarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
             },
             {
                 "name": "Terciario",
@@ -574,7 +574,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...Primario.args,\n    variante: 'terciario',\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
             },
             {
                 "name": "TerciarioDesabilitado",
@@ -594,7 +594,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...Terciario.args,\n    desabilitado: true,\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Terciario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
             },
             {
                 "name": "TerciarioVioleta",
@@ -614,7 +614,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    variante: 'terciario',\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
             },
             {
                 "name": "TerciarioVioletaDesabilitado",
@@ -634,7 +634,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...TerciarioVioleta.args,\n    desabilitado: true,\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...TerciarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
             }
         ],
         "functions": [],
@@ -728,7 +728,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
-                    "defaultValue": "{\n  stories: ['../src/stories/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Documentação',\n  }\n}"
+                    "defaultValue": "{\r\n  stories: ['../src/stories/*.stories.@(js|jsx|ts|tsx|mdx)'],\r\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {},\r\n  },\r\n  docs: {\r\n    autodocs: true,\r\n    defaultName: 'Documentação',\r\n  }\r\n}"
                 }
             ],
             "libs/storybook-host/src/stories/botao.component.stories.ts": [
@@ -872,7 +872,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  component: ButtonComponent,\n  title: 'Button',\n  parameters: {\n    docs: {\n      description: {\n        component: 'Este é um componente de botão utilizado para disparar ações.'\n      }\n    },\n  }\n}"
+                    "defaultValue": "{\r\n  component: ButtonComponent,\r\n  title: 'Button',\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Este é um componente de botão utilizado para disparar ações.'\r\n      }\r\n    },\r\n  }\r\n}"
                 },
                 {
                     "name": "Primario",
@@ -882,7 +882,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    texto: 'Action',\n    desabilitado: false,\n    variante: 'primario',\n    tema: 'azul'\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    texto: 'Action',\r\n    desabilitado: false,\r\n    variante: 'primario',\r\n    tema: 'azul'\r\n  }\r\n}"
                 },
                 {
                     "name": "PrimarioDesabilitado",
@@ -892,7 +892,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...Primario.args,\n    desabilitado: true,\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
                 },
                 {
                     "name": "PrimarioVioleta",
@@ -902,7 +902,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...Primario.args,\n    tema: 'violeta'\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    tema: 'violeta'\r\n  }\r\n}"
                 },
                 {
                     "name": "PrimarioVioletaDesabilitado",
@@ -912,7 +912,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    desabilitado: true\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    desabilitado: true\r\n  }\r\n}"
                 },
                 {
                     "name": "Secundario",
@@ -922,7 +922,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...Primario.args,\n    variante: 'secundario',\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
                 },
                 {
                     "name": "SecundarioDesabilitado",
@@ -932,7 +932,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...Secundario.args,\n    desabilitado: true,\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Secundario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
                 },
                 {
                     "name": "SecundarioVioleta",
@@ -942,7 +942,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    variante: 'secundario',\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
                 },
                 {
                     "name": "SecundarioVioletaDesabilitado",
@@ -952,7 +952,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...SecundarioVioleta.args,\n    desabilitado: true,\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...SecundarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
                 },
                 {
                     "name": "Terciario",
@@ -962,7 +962,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...Primario.args,\n    variante: 'terciario',\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
                 },
                 {
                     "name": "TerciarioDesabilitado",
@@ -972,7 +972,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...Terciario.args,\n    desabilitado: true,\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Terciario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
                 },
                 {
                     "name": "TerciarioVioleta",
@@ -982,7 +982,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...PrimarioVioleta.args,\n    variante: 'terciario',\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
                 },
                 {
                     "name": "TerciarioVioletaDesabilitado",
@@ -992,7 +992,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...TerciarioVioleta.args,\n    desabilitado: true,\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...TerciarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
                 }
             ],
             "libs/storybook-host/src/stories/input.component.stories.ts": [
@@ -1004,7 +1004,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<InputComponent>",
-                    "defaultValue": "{\n  component: InputComponent,\n  title: 'InputComponent',\n}"
+                    "defaultValue": "{\r\n  component: InputComponent,\r\n  title: 'InputComponent',\r\n}"
                 },
                 {
                     "name": "Primary",
@@ -1014,7 +1014,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    multilinha: false,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    multilinha: false,\r\n  },\r\n}"
                 }
             ]
         },
