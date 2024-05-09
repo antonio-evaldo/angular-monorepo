@@ -75,3 +75,13 @@ button.terciario.disabled {
   background: var(--branco, #FFF);
   color: var(--texto-desativado, #8A8A8A);
 }
+
+.violeta {
+  --cor-primaria: #AF4BFE;
+  --cor-secundaria: #BE74F9;
+  --cor-terciaria: #E2BDFF;
+  --cor-quaternaria: #F5E8FF;
+  /* As duas cores abaixo não foram definidas no figma: */
+  --cor-hover: #a530ff;
+  --cor-click: #8e25df;
+}
