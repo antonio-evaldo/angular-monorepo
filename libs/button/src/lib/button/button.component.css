@@ -1,6 +1,15 @@
+@font-face {
+  font-family: 'Mulish';
+  src: url('./fontes/Mulish-VariableFont_wght.ttf') format('woff2'),
+      url('./fontes/Mulish-Italic-VariableFont_wght.ttf') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
 button {
-  background: var(--cor-primaria);
-  color: var(--branco);
+  background: var(--cor-primaria, #2D5BFF);
+  color: var(--branco, #FFF);
   padding: 12px 32px 12px 32px;
   border-radius: 8px;
   border: none;
@@ -22,56 +31,56 @@ button:focus {
 }
 
 button.primario:hover {
-  background: var(--cor-hover);
-  color: var(--branco);
+  background: var(--cor-hover, #1B4AF0);
+  color: var(--branco, #FFF);
 }
 
 button.primario:active {
-  background: var(--cor-click);
-  color: var(--branco);
+  background: var(--cor-click, #002ED0);
+  color: var(--branco, #FFF);
 }
 
 button.primario:disabled {
-  background: var(--bg-desativado);
-  color: var(--texto-desativado);
+  background: var(--bg-desativado, #EFEFEF);
+  color: var(--texto-desativado, #8A8A8A);
 }
 
 button.secundario {
-  background: var(--cor-quaternaria);
-  color: var(--cor-primaria);
+  background: var(--cor-quaternaria, #ECF0FF);
+  color: var(--cor-primaria, #2D5BFF);
 }
 
 button.secundario:hover {
-  background: var(--cor-hover);
-  color: var(--branco);
+  background: var(--cor-hover, #1B4AF0);
+  color: var(--branco, #FFF);
 }
 
 button.secundario:active {
-  background: var(--cor-click);
-  color: var(--branco);
+  background: var(--cor-click, #002ED0);
+  color: var(--branco, #FFF);
 }
 
 button.secundario:disabled {
-  background: var(--bg-desativado);
-  color: var(--texto-desativado);
+  background: var(--bg-desativado, #EFEFEF);
+  color: var(--texto-desativado, #8A8A8A);
 }
 
 button.terciario {
-  background: var(--branco);
-  color: var(--cor-primaria);
+  background: var(--branco, #FFF);
+  color: var(--cor-primaria, #2D5BFF);
 }
 
 button.terciario:hover {
-  background: var(--branco);
-  color: var(--cor-hover);
+  background: var(--branco, #FFF);
+  color: var(--cor-hover, #1B4AF0);
 }
 
 button.terciario:active {
-  background: var(--branco);
-  color: var(--cor-click);
+  background: var(--branco, #FFF);
+  color: var(--cor-click, #002ED0);
 }
 
 button.terciario.disabled {
-  background: var(--branco);
-  color: var(--texto-desativado);
+  background: var(--branco, #FFF);
+  color: var(--texto-desativado, #8A8A8A);
 }
