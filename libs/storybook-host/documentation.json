@@ -341,6 +341,49 @@
             "stylesData": "",
             "extends": [],
             "templateData": "@if (!multilinha) {\n  <input type=\"text\">\n} @else {\n  <textarea></textarea>\n}\n"
+        },
+        {
+            "name": "InputReleaseComponent",
+            "id": "component-InputReleaseComponent-80c7758d8f440323ffc2d4a037fa4274734a3d5b859086bc9394be9bef862501a1dd27a3bbf1ba2be29ae727af221c83c2fe7651afbf0260f7e8adc3c7aeee45",
+            "file": "libs/input-release/src/lib/input-release/input-release.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "alfabit-input",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./input-release.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'alfabit-input',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './input-release.component.html',\n  styleUrl: './input-release.component.css',\n})\nexport class InputReleaseComponent {}\n",
+            "styleUrl": "./input-release.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>input-release works!</p>\n"
         }
     ],
     "modules": [],
@@ -1112,7 +1155,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 1,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -1131,6 +1174,15 @@
                 "name": "ButtonComponent",
                 "coveragePercent": 16,
                 "coverageCount": "1/6",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/input-release/src/lib/input-release/input-release.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputReleaseComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
