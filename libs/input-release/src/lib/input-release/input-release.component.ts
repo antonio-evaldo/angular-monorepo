@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,4 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './input-release.component.html',
   styleUrl: './input-release.component.css',
 })
-export class InputReleaseComponent {}
+export class InputReleaseComponent {
+  @Input() multilinha = false;
+}

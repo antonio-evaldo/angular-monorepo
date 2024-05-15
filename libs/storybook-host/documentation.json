@@ -8,147 +8,6 @@
     "directives": [],
     "components": [
         {
-            "name": "BotaoComponent",
-            "id": "component-BotaoComponent-69610ec791d02be6adf5ff9c08a592387966c8c890c23474b83768cc71674b39ef69ca4116fb3e9fdef9de85f0853bdaf8b2ef6a876a53f2694644b818762764",
-            "file": "libs/botao/src/lib/botao/botao.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-botao",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./botao.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "desabilitado",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 19,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "tema",
-                    "defaultValue": "'azul'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 21,
-                    "type": "temas",
-                    "decorators": []
-                },
-                {
-                    "name": "texto",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nTexto botão\n",
-                    "description": "<p>Texto botão</p>\n",
-                    "line": 18,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "variante",
-                    "defaultValue": "'primario'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 20,
-                    "type": "variantes",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "obterVariante",
-                    "args": [
-                        {
-                            "name": "variante",
-                            "type": "variantes",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "desabilitado",
-                            "type": "boolean",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "tema",
-                            "type": "temas",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "string",
-                    "typeParameters": [],
-                    "line": 23,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "variante",
-                            "type": "variantes",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "desabilitado",
-                            "type": "boolean",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "tema",
-                            "type": "temas",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\ntype variantes = 'primario' | 'secundario' | 'terciario';\ntype temas = 'azul' | 'violeta';\n\n@Component({\n  selector: 'lib-botao',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './botao.component.html',\n  styleUrl: './botao.component.css',\n})\nexport class BotaoComponent {\n  /**\n   * Texto botão\n   */\n  @Input() texto = '';\n  @Input() desabilitado = false;\n  @Input() variante: variantes = 'primario';\n  @Input() tema: temas = 'azul';\n\n  obterVariante(variante: variantes, desabilitado: boolean, tema: temas): string {\n    let classes = `${variante} ${tema}`;\n\n    classes += desabilitado ? \" disabled\" : \"\";\n\n    return classes;\n  }\n}\n",
-            "styleUrl": "./botao.component.css",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<button\r\n    [class]=\"obterVariante(variante, desabilitado, tema)\"\r\n    [disabled]=\"desabilitado\"\r\n>\r\n    {{ texto }}\r\n</button>\r\n\r\n\r\n"
-        },
-        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-337ea826dedfb909c6a3e399d93e4e86efa84809bc637be5d51cd03477403ca5b79197982a0c623dc8c730700ce55780a273735e66d3becf52ab545eff8fce9f",
             "file": "libs/button/src/lib/button/button.component.ts",
@@ -290,19 +149,19 @@
             "templateData": "<button\r\n    [class]=\"obterVariante(variante, desabilitado, tema)\"\r\n    [disabled]=\"desabilitado\"\r\n>\r\n    {{ texto }}\r\n</button>\r\n\r\n\r\n\r\n"
         },
         {
-            "name": "InputComponent",
-            "id": "component-InputComponent-1c965e542e6f9ed87766810ae35a369db33227b1422cad8b7908d9c2b28a3c7de1dc8b5d64eaa9c827e80cdf6dbfa169030e41f615f4a58a3c94bb7939562a9c",
-            "file": "libs/input/src/lib/input/input.component.ts",
+            "name": "InputReleaseComponent",
+            "id": "component-InputReleaseComponent-31636cdfb1f3bbb4e23e28cad255dcf7cdc99e5037f2bb7730b78a75e5c88ed7133b11fbb37d0a35467d2a384d80e80b96a2c427a535f9f385a84b4ebb72db36",
+            "file": "libs/input-release/src/lib/input-release/input-release.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "lib-text",
+            "selector": "alfabit-input",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./input.component.html"
+                "./input-release.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -334,56 +193,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'lib-text',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './input.component.html',\n  styleUrl: './input.component.css',\n})\nexport class InputComponent {\n  @Input() multilinha = false;\n}\n",
-            "styleUrl": "./input.component.css",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "@if (!multilinha) {\n  <input type=\"text\">\n} @else {\n  <textarea></textarea>\n}\n"
-        },
-        {
-            "name": "InputReleaseComponent",
-            "id": "component-InputReleaseComponent-5488bf559ba35ea09c46111387539a6c1dd4ccdebcbe3081dc8bb813e139c2868c98aa2205c9cc08f50c22d102f567207d754653fbe3051edebc6161952a3fcb",
-            "file": "libs/input-release/src/lib/input-release/input-release.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "alfabit-input",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./input-release.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'alfabit-input',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './input-release.component.html',\r\n  styleUrl: './input-release.component.css',\r\n})\r\nexport class InputReleaseComponent {}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'alfabit-input',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './input-release.component.html',\r\n  styleUrl: './input-release.component.css',\r\n})\r\nexport class InputReleaseComponent {\r\n  @Input() multilinha = false;\r\n}\r\n",
             "styleUrl": "./input-release.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>input-release works!</p>\r\n"
+            "templateData": "@if (!multilinha) {\r\n  <input type=\"text\">\r\n} @else {\r\n  <textarea></textarea>\r\n}"
         }
     ],
     "modules": [],
@@ -403,16 +219,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<BotaoComponent>",
-                "defaultValue": "{\r\n  title: 'botao',\r\n  component: BotaoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Este é um componente de botão utilizado para disparar ações.'\r\n      }\r\n    },\r\n  }\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -423,21 +229,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/input.component.stories.ts",
+                "file": "libs/storybook-host/src/stories/input-release.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<InputComponent>",
-                "defaultValue": "{\r\n  component: InputComponent,\r\n  title: 'InputComponent',\r\n}"
-            },
-            {
-                "name": "Primario",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    texto: 'Action',\r\n    desabilitado: false,\r\n    variante: 'primario',\r\n    tema: 'azul'\r\n  }\r\n}"
+                "type": "Meta<InputReleaseComponent>",
+                "defaultValue": "{\n  component: InputReleaseComponent,\n  title: 'InputReleaseComponent',\n}"
             },
             {
                 "name": "Primario",
@@ -453,16 +249,6 @@
                 "name": "PrimarioDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-            },
-            {
-                "name": "PrimarioDesabilitado",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -473,31 +259,11 @@
                 "name": "PrimarioVioleta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    tema: 'violeta'\r\n  }\r\n}"
-            },
-            {
-                "name": "PrimarioVioleta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    tema: 'violeta'\r\n  }\r\n}"
-            },
-            {
-                "name": "PrimarioVioletaDesabilitado",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    desabilitado: true\r\n  }\r\n}"
             },
             {
                 "name": "PrimarioVioletaDesabilitado",
@@ -513,21 +279,11 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/input.component.stories.ts",
+                "file": "libs/storybook-host/src/stories/input-release.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    multilinha: false,\r\n  },\r\n}"
-            },
-            {
-                "name": "Secundario",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
+                "defaultValue": "{\n  args: {\n    multilinha: false,\n  },\n}"
             },
             {
                 "name": "Secundario",
@@ -543,31 +299,11 @@
                 "name": "SecundarioDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...Secundario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-            },
-            {
-                "name": "SecundarioDesabilitado",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...Secundario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-            },
-            {
-                "name": "SecundarioVioleta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
             },
             {
                 "name": "SecundarioVioleta",
@@ -583,31 +319,11 @@
                 "name": "SecundarioVioletaDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...SecundarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-            },
-            {
-                "name": "SecundarioVioletaDesabilitado",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...SecundarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-            },
-            {
-                "name": "Terciario",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
             },
             {
                 "name": "Terciario",
@@ -623,16 +339,6 @@
                 "name": "TerciarioDesabilitado",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...Terciario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-            },
-            {
-                "name": "TerciarioDesabilitado",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -643,31 +349,11 @@
                 "name": "TerciarioVioleta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
-            },
-            {
-                "name": "TerciarioVioleta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
-            },
-            {
-                "name": "TerciarioVioletaDesabilitado",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...TerciarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
             },
             {
                 "name": "TerciarioVioletaDesabilitado",
@@ -686,17 +372,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BotaoComponent>",
-                "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonComponent>",
                 "file": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "deprecated": false,
@@ -708,8 +383,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<InputComponent>",
-                "file": "libs/storybook-host/src/stories/input.component.stories.ts",
+                "rawtype": "StoryObj<InputReleaseComponent>",
+                "file": "libs/storybook-host/src/stories/input-release.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -727,33 +402,11 @@
                 "kind": 192
             },
             {
-                "name": "temas",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "\"azul\" | \"violeta\"",
-                "file": "libs/botao/src/lib/botao/botao.component.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 192
-            },
-            {
                 "name": "variantes",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
                 "file": "libs/button/src/lib/button/button.component.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 192
-            },
-            {
-                "name": "variantes",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
-                "file": "libs/botao/src/lib/botao/botao.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -772,138 +425,6 @@
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
                     "defaultValue": "{\r\n  stories: ['../src/stories/*.stories.@(js|jsx|ts|tsx|mdx)'],\r\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {},\r\n  },\r\n  docs: {\r\n    autodocs: true,\r\n    defaultName: 'Documentação',\r\n  }\r\n}"
-                }
-            ],
-            "libs/storybook-host/src/stories/botao.component.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<BotaoComponent>",
-                    "defaultValue": "{\r\n  title: 'botao',\r\n  component: BotaoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Este é um componente de botão utilizado para disparar ações.'\r\n      }\r\n    },\r\n  }\r\n}"
-                },
-                {
-                    "name": "Primario",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    texto: 'Action',\r\n    desabilitado: false,\r\n    variante: 'primario',\r\n    tema: 'azul'\r\n  }\r\n}"
-                },
-                {
-                    "name": "PrimarioDesabilitado",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-                },
-                {
-                    "name": "PrimarioVioleta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    tema: 'violeta'\r\n  }\r\n}"
-                },
-                {
-                    "name": "PrimarioVioletaDesabilitado",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    desabilitado: true\r\n  }\r\n}"
-                },
-                {
-                    "name": "Secundario",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
-                },
-                {
-                    "name": "SecundarioDesabilitado",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...Secundario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-                },
-                {
-                    "name": "SecundarioVioleta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'secundario',\r\n  }\r\n}"
-                },
-                {
-                    "name": "SecundarioVioletaDesabilitado",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...SecundarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-                },
-                {
-                    "name": "Terciario",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...Primario.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
-                },
-                {
-                    "name": "TerciarioDesabilitado",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...Terciario.args,\r\n    desabilitado: true,\r\n  }\r\n}"
-                },
-                {
-                    "name": "TerciarioVioleta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...PrimarioVioleta.args,\r\n    variante: 'terciario',\r\n  }\r\n}"
-                },
-                {
-                    "name": "TerciarioVioletaDesabilitado",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...TerciarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
                 }
             ],
             "libs/storybook-host/src/stories/button.component.stories.ts": [
@@ -1038,45 +559,32 @@
                     "defaultValue": "{\r\n  args: {\r\n    ...TerciarioVioleta.args,\r\n    desabilitado: true,\r\n  }\r\n}"
                 }
             ],
-            "libs/storybook-host/src/stories/input.component.stories.ts": [
+            "libs/storybook-host/src/stories/input-release.component.stories.ts": [
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/input.component.stories.ts",
+                    "file": "libs/storybook-host/src/stories/input-release.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<InputComponent>",
-                    "defaultValue": "{\r\n  component: InputComponent,\r\n  title: 'InputComponent',\r\n}"
+                    "type": "Meta<InputReleaseComponent>",
+                    "defaultValue": "{\n  component: InputReleaseComponent,\n  title: 'InputReleaseComponent',\n}"
                 },
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "libs/storybook-host/src/stories/input.component.stories.ts",
+                    "file": "libs/storybook-host/src/stories/input-release.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    multilinha: false,\r\n  },\r\n}"
+                    "defaultValue": "{\n  args: {\n    multilinha: false,\n  },\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "libs/storybook-host/src/stories/botao.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<BotaoComponent>",
-                    "file": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "libs/storybook-host/src/stories/button.component.stories.ts": [
                 {
                     "name": "Story",
@@ -1090,13 +598,13 @@
                     "kind": 183
                 }
             ],
-            "libs/storybook-host/src/stories/input.component.stories.ts": [
+            "libs/storybook-host/src/stories/input-release.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<InputComponent>",
-                    "file": "libs/storybook-host/src/stories/input.component.stories.ts",
+                    "rawtype": "StoryObj<InputReleaseComponent>",
+                    "file": "libs/storybook-host/src/stories/input-release.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1126,30 +634,6 @@
                     "description": "",
                     "kind": 192
                 }
-            ],
-            "libs/botao/src/lib/botao/botao.component.ts": [
-                {
-                    "name": "temas",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"azul\" | \"violeta\"",
-                    "file": "libs/botao/src/lib/botao/botao.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 192
-                },
-                {
-                    "name": "variantes",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
-                    "file": "libs/botao/src/lib/botao/botao.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 192
-                }
             ]
         }
     },
@@ -1158,15 +642,6 @@
         "count": 0,
         "status": "low",
         "files": [
-            {
-                "filePath": "libs/botao/src/lib/botao/botao.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "BotaoComponent",
-                "coveragePercent": 16,
-                "coverageCount": "1/6",
-                "status": "low"
-            },
             {
                 "filePath": "libs/button/src/lib/button/button.component.ts",
                 "type": "component",
@@ -1182,15 +657,6 @@
                 "linktype": "component",
                 "name": "InputReleaseComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/input/src/lib/input/input.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "InputComponent",
-                "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
             },
@@ -1205,136 +671,6 @@
                 "status": "low"
             },
             {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primario",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimarioDesabilitado",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimarioVioleta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimarioVioletaDesabilitado",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secundario",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "SecundarioDesabilitado",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "SecundarioVioleta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "SecundarioVioletaDesabilitado",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Terciario",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TerciarioDesabilitado",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TerciarioVioleta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "libs/storybook-host/src/stories/botao.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TerciarioVioletaDesabilitado",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "libs/storybook-host/src/stories/button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -1465,7 +801,7 @@
                 "status": "low"
             },
             {
-                "filePath": "libs/storybook-host/src/stories/input.component.stories.ts",
+                "filePath": "libs/storybook-host/src/stories/input-release.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1475,7 +811,7 @@
                 "status": "low"
             },
             {
-                "filePath": "libs/storybook-host/src/stories/input.component.stories.ts",
+                "filePath": "libs/storybook-host/src/stories/input-release.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
