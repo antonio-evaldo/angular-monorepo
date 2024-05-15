@@ -344,7 +344,7 @@
         },
         {
             "name": "InputReleaseComponent",
-            "id": "component-InputReleaseComponent-80c7758d8f440323ffc2d4a037fa4274734a3d5b859086bc9394be9bef862501a1dd27a3bbf1ba2be29ae727af221c83c2fe7651afbf0260f7e8adc3c7aeee45",
+            "id": "component-InputReleaseComponent-5488bf559ba35ea09c46111387539a6c1dd4ccdebcbe3081dc8bb813e139c2868c98aa2205c9cc08f50c22d102f567207d754653fbe3051edebc6161952a3fcb",
             "file": "libs/input-release/src/lib/input-release/input-release.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -377,13 +377,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'alfabit-input',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './input-release.component.html',\n  styleUrl: './input-release.component.css',\n})\nexport class InputReleaseComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'alfabit-input',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './input-release.component.html',\r\n  styleUrl: './input-release.component.css',\r\n})\r\nexport class InputReleaseComponent {}\r\n",
             "styleUrl": "./input-release.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>input-release works!</p>\n"
+            "templateData": "<p>input-release works!</p>\r\n"
         }
     ],
     "modules": [],
@@ -720,7 +720,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"azul\" | \"violeta\"",
-                "file": "libs/botao/src/lib/botao/botao.component.ts",
+                "file": "libs/button/src/lib/button/button.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -731,17 +731,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"azul\" | \"violeta\"",
-                "file": "libs/button/src/lib/button/button.component.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 192
-            },
-            {
-                "name": "variantes",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
                 "file": "libs/botao/src/lib/botao/botao.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -754,6 +743,17 @@
                 "subtype": "typealias",
                 "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
                 "file": "libs/button/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "variantes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
+                "file": "libs/botao/src/lib/botao/botao.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1103,30 +1103,6 @@
                     "kind": 183
                 }
             ],
-            "libs/botao/src/lib/botao/botao.component.ts": [
-                {
-                    "name": "temas",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"azul\" | \"violeta\"",
-                    "file": "libs/botao/src/lib/botao/botao.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 192
-                },
-                {
-                    "name": "variantes",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
-                    "file": "libs/botao/src/lib/botao/botao.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 192
-                }
-            ],
             "libs/button/src/lib/button/button.component.ts": [
                 {
                     "name": "temas",
@@ -1145,6 +1121,30 @@
                     "subtype": "typealias",
                     "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
                     "file": "libs/button/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "libs/botao/src/lib/botao/botao.component.ts": [
+                {
+                    "name": "temas",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"azul\" | \"violeta\"",
+                    "file": "libs/botao/src/lib/botao/botao.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                },
+                {
+                    "name": "variantes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primario\" | \"secundario\" | \"terciario\"",
+                    "file": "libs/botao/src/lib/botao/botao.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

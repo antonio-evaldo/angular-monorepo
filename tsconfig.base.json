@@ -17,7 +17,6 @@
     "paths": {
       "@alfabit/button": ["libs/button/src/index.ts"],
       "@alfabit/input": ["libs/input-release/src/index.ts"],
-      "@angular-monorepo/botao": ["libs/botao/src/index.ts"],
       "@angular-monorepo/input": ["libs/input/src/index.ts"],
       "@angular-monorepo/storybook-host": ["libs/storybook-host/src/index.ts"],
       "@angular-monorepo/storybook-host-botao": [
