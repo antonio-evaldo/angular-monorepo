@@ -233,7 +233,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<InputReleaseComponent>",
-                "defaultValue": "{\n  component: InputReleaseComponent,\n  title: 'InputReleaseComponent',\n}"
+                "defaultValue": "{\n  component: InputReleaseComponent,\n  title: 'Input',\n}"
             },
             {
                 "name": "Primario",
@@ -568,7 +568,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<InputReleaseComponent>",
-                    "defaultValue": "{\n  component: InputReleaseComponent,\n  title: 'InputReleaseComponent',\n}"
+                    "defaultValue": "{\n  component: InputReleaseComponent,\n  title: 'Input',\n}"
                 },
                 {
                     "name": "Primary",
