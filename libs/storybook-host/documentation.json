@@ -200,6 +200,49 @@
             "stylesData": "",
             "extends": [],
             "templateData": "@if (!multilinha) {\r\n  <input type=\"text\">\r\n} @else {\r\n  <textarea></textarea>\r\n}"
+        },
+        {
+            "name": "TesteComponent",
+            "id": "component-TesteComponent-0a8ae93f3692372cf5c562a3013382c1b7f60c3a82231f52f5ed2cb085e48d2bcdac475b368f21dbaef33ff63af398f3134da7581fe404ea3fa1bfab4f228cc7",
+            "file": "libs/teste/src/lib/teste/teste.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "alfabit-teste",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./teste.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'alfabit-teste',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './teste.component.html',\r\n  styleUrl: './teste.component.css',\r\n})\r\nexport class TesteComponent {}\r\n",
+            "styleUrl": "./teste.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>teste works!</p>\r\n"
         }
     ],
     "modules": [],
@@ -233,7 +276,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<InputReleaseComponent>",
-                "defaultValue": "{\n  component: InputReleaseComponent,\n  title: 'Input',\n}"
+                "defaultValue": "{\r\n  component: InputReleaseComponent,\r\n  title: 'Input',\r\n}"
             },
             {
                 "name": "Primario",
@@ -283,7 +326,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    multilinha: false,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    multilinha: false,\r\n  },\r\n}"
             },
             {
                 "name": "Secundario",
@@ -568,7 +611,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<InputReleaseComponent>",
-                    "defaultValue": "{\n  component: InputReleaseComponent,\n  title: 'Input',\n}"
+                    "defaultValue": "{\r\n  component: InputReleaseComponent,\r\n  title: 'Input',\r\n}"
                 },
                 {
                     "name": "Primary",
@@ -578,7 +621,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    multilinha: false,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    multilinha: false,\r\n  },\r\n}"
                 }
             ]
         },
@@ -816,6 +859,15 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/teste/src/lib/teste/teste.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TesteComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
