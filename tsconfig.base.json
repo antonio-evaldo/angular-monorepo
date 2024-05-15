@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-monorepo/botao": ["libs/botao/src/index.ts"],
-      "@angular-monorepo/input": ["libs/input/src/index.ts"],
+      "@alfabit/button": ["libs/button/src/index.ts"],
+      "@alfabit/input": ["libs/input-release/src/index.ts"],
+      "@alfabit/teste": ["libs/teste/src/index.ts"],
       "@angular-monorepo/storybook-host": ["libs/storybook-host/src/index.ts"],
       "@angular-monorepo/storybook-host-botao": [
         "libs/storybook-host-botao/src/index.ts"
