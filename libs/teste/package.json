@@ -1,6 +1,6 @@
 {
-  "name": "@alfabit/input",
-  "version": "0.3.0",
+  "name": "@alfabit/teste",
+  "version": "0.1.0",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
@@ -8,8 +8,5 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false,
-  "publishConfig": {
-    "access": "public"
-  }
+  "sideEffects": false
 }
